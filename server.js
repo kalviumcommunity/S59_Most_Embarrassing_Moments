@@ -27,4 +27,4 @@ app.get('/', (req, res) => {
 app.listen(port, async () => {
   await connectToDataBase()
   console.log(`The server running on PORT: ${port}`)
-});
+})
