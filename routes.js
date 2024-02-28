@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
         res.json(times)
     }
     catch (error) {
-        res.send('An error has been caught- get', error)
+        res.json({error: 'An error has been caught- get'})
     }
 })
 
@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
         res.json(times)
     }
     catch (error) {
-        res.send("An error has been caught - getID")
+        res.json({error: "An error has been caught - getID"})
     }
 })
 
@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
         res.status(201).json(saveMoment)
     }
     catch (error) {
-        res.send("An error has been caught - post", error)
+        res.send({error:"An error has been caught - post"})
     }
 })
 
@@ -45,7 +45,7 @@ router.put('/:id', async (req, res) => {
         res.json(times)
     }
     catch (error) {
-        res.status(400).send("An error has been caught", error)
+        res.status(400).json({error: "An error has been caught"})
     }
 })
 
@@ -53,12 +53,12 @@ router.patch('/:id', async (req, res) => {
     try {
         const times = await Moment.findByIdAndUpdate(req.params.id, req.body, { new : true })    
         if (!times) {
-            return res.status(400).send("No result found")
+            return res.status(400).json("No result found")
         }
         res.json(times)
     }
     catch (error) {
-        res.status(400).send("An error has been caught", error)
+        res.status(400).json({error: "An error has been caught"})
     }
 })
 
@@ -72,7 +72,7 @@ router.delete('/:id', async (req, res) => {
         res.send("Item deleted successfully")
     }
     catch (error) {
-        res.status(400).send("An error has been caught")
+        res.status(400).json({error: "An error has been caught"})
     }
 })
 
