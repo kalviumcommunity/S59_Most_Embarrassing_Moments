@@ -7,20 +7,26 @@ body {
     overflow-x: hidden;
 }
 
-#heading-div {
+#header {
+    display: flex;
+    justify-content: space-evenly;
     background-color: black;
+}
+
+.heading-div {
+    color: white;
 }
 
 #main-heading {
     background: url("https://www.icegif.com/wp-content/uploads/2022/08/icegif-968.gif");
     font-family: monospace;
-    text-align: center;
+    text-align: left;
+    font-size: 5vh;
     background-position: 0 0;
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(91, 114, 138, 0.145);
     animation: moving-bg 5s linear infinite;
     font-weight: 900;
-    font-size: 10vh;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white;
     padding: 2vh;
