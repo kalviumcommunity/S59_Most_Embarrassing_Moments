@@ -5,7 +5,7 @@ export default function LandingPage() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:3000/api")
+        fetch("https://s59-most-embarrassing-moments-2.onrender.com/api")
         .then((res) => res.json())
         .then((res) => {
             console.log(res);
