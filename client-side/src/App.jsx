@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Moments from "./components/Moments";
 import Home from "./components/Home";
 import Loader from "./components/Loader";
+import NavBar from "./components/NavBar";
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -24,6 +25,7 @@ export default function App() {
   return (
     <>
       {load ? <Loader /> : null}
+      <NavBar/>
       <LandingPage />
       <Routes>
         <Route path="/" element={<Home data={data} />} />
