@@ -13,10 +13,17 @@ export default function Location({ data }) {
             <div
               key={e._id}
               className="card"
-              style={{ backgroundImage: `url(${curr})` }}
+              style={{
+                backgroundImage: `url(${curr})`,
+                backgroundPosition: "cover",
+              }}
             >
               <div className="location">{e.location}</div>
-              <Link className="link" to="/moments" state={{ location: e.location, data: e }}>
+              <Link
+                className="link"
+                to="/moments"
+                state={{ location: e.location, data: e }}
+              >
                 {/* {console.log(e.location)} */}
                 <div className="click-more">Click to see</div>
               </Link>
