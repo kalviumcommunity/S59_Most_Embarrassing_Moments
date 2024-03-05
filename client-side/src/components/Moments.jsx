@@ -8,6 +8,10 @@ export default function Moments({ load }) {
   const data = location.state.data;
   console.log(location, state);
 
+  if (!state) {
+    return <h1>Location not fond !</h1>;
+  }
+
   return (
     <>
       {load ? <Loader /> : null}
