@@ -36,16 +36,16 @@ body {
 
 #main-heading {
     background: url("https://www.icegif.com/wp-content/uploads/2022/08/icegif-968.gif");
+    -webkit-text-fill-color: #95aede25;
+    -webkit-background-clip: text;
+    background-clip: text;
     font-family: monospace;
     text-align: left;
     font-size: 10vh;
-    background-position: 0 0;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: rgba(91, 114, 138, 0.145);
-    animation: moving-bg 5s linear infinite;
     font-weight: 900;
-    -webkit-text-stroke-width: 1px;
+    background-position: 0;
+    animation: moving-bg 4.8s linear infinite;
+    -webkit-text-stroke-width: 1.08px;
     -webkit-text-stroke-color: white;
     padding: 2vh;
 }
