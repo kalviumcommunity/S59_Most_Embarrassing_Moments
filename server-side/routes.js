@@ -15,6 +15,21 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/:location', async (req, res) => {
+    try {
+        //when searching, use %20 for space between the works for location search
+        const location = req.params.location
+        if (!location) {
+            return res.status(400).json({ error: 'Location parameter is required' });
+        }
+        const moments = await Moment.find({ location });
+        res.json(moments);
+    } 
+    catch (error) {
+        res.status(500).json({ error: 'An error has been caught - getLocation' });
+    }
+})
+
 router.get('/:id', async (req, res) => {
     try {
         const times = await Moment.findById(req.params.id)

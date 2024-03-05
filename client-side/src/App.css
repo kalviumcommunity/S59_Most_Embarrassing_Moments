@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
 * {
     margin: 0%;
     padding: 0%;
@@ -11,19 +13,30 @@ body {
     display: flex;
     justify-content: space-evenly;
     background-color: black;
+    align-items: center;
+    padding: 4vh;
+    /* height: 40vh; */
 }
 
-.heading-div {
+.heading-div img {
+    height: 46vh;
+}
+
+.heading-div h4 {
     color: white;
+    font-family: monospace;
+    font-size: 3vh;
+    margin: 2vh;
 }
 
 #main-heading {
     background: url("https://www.icegif.com/wp-content/uploads/2022/08/icegif-968.gif");
     font-family: monospace;
     text-align: left;
-    font-size: 5vh;
+    font-size: 10vh;
     background-position: 0 0;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: rgba(91, 114, 138, 0.145);
     animation: moving-bg 5s linear infinite;
     font-weight: 900;
@@ -41,32 +54,138 @@ body {
     }
 }
 
-section#choose {
+.section {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 4vh;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5vh 2vh 5vh 2vh;
 }
 
-section#choose div {
-    margin: 2vh;
-    background-color: rgba(255, 69, 69, 0.222);
-    color: rgb(0, 0, 0);
-    padding: 4vh;
-    font-family: 'Gill Sans';
-    font-variant: small-caps;
+.card {
+    /* background-color: black; */
+    /* color: white; */
+    background-size: cover;
+    margin: 8vh;
+    padding: 3vh;
+    height: 40vh;
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    /* background-color: white; */
+    color: black;
+    transition-duration: 0.3s;
+    box-shadow: 1px 1px 10px black;
+}
+
+.card:not(:hover) {
+    transition-duration: 0.6s;
+}
+
+.location {
+    background-color: white;
+    width: fit-content;
+    padding: 1vh;
+    border-radius: 1vh;
+    user-select: none;
+}
+
+.link {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.511);
+    padding: 1vh;
+    width: fit-content;
+    color: white;
     border-radius: 2vh;
-    font-size: 4vh;
+}
+
+.link:hover {
+    transform: scale(1.03);
+    box-shadow: 1px 1px 10px white;
+    transition-duration: 0.5s;
+}
+
+.link:not(:hover) {
+    transition-duration: 0.2s;
+}
+
+.message {
+    margin: 15vh 0vh 15vh 0vh;
+    padding: 6vh;
     text-align: center;
 }
 
-section#choose div:hover {
-    background-color: rgba(255, 69, 69, 0.608);
-    transform: scale(1.07);
-    transition-duration: 0.5s;
-    cursor: pointer;
+.message span:nth-of-type(1) {
+    animation: appear 7s infinite;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 4vh;
+    line-height: 8vh;
 }
 
-section#choose div:not(:hover) {
-    transition-duration: 0.6s;
+.message span:nth-of-type(2) {
+    animation: slide-in 7s infinite;
+    font-family: "Silkscreen";
+    font-size: 5vh;
+    text-shadow: 2px 2px rgb(255, 110, 110);
+
+}
+
+@keyframes appear {
+    0% {opacity:0%;}
+    25% {opacity:100%;}
+    90% {opacity: 100%;}
+    100% {opacity:0%;}
+}
+
+@keyframes slide-in {
+    0% { margin-left: -800px; }
+    50% { margin-left: 0px; }
+}
+
+.moment-box {
+    margin: 20vh;
+    text-align: center;
+}
+
+.moment-box img {
+    animation: show 6s 1 ease-in;
+
+}
+
+@keyframes show {
+    0% {
+        transform: scale(0.5);
+    }
+    10% {
+        transform: scale(1);
+    }
+
+}
+
+.moment-box h2 {
+    font-family: Georgia;
+    text-align: center;
+    margin: 5vh;
+    font-size: 5vh;
+    animation: appear 3s infinite ease-in;
+}
+
+.moment-box div {
+    margin: 5vh;
+}
+
+.moment-box h4 {
+    margin: 2vh;
+    font-family: monospace;
+    font-size: 2.2vh;
+}
+
+.one {
+    margin: 10vh;
+    padding: 4vh;
+    background-color: rgba(251, 202, 181, 0.288);
+
 }
