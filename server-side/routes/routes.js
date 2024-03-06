@@ -1,17 +1,17 @@
 const express = require('express')
 const router = express.Router()
-const { connectToDataBase } = require('./db.js')
-const Moment = require('./schema.js')
+const { connectToDataBase } = require('../db.js')
+const Moment = require('../schemas/schema.js')
 
 connectToDataBase()
-
+  
 router.get('/', async (req, res) => {
     try {
         const times = await Moment.find()
         res.json(times)
     }
     catch (error) {
-        res.json({error: 'An error has been caught- get'})
+        res.json({error: 'An error has been caught - get'})
     }
 })
 

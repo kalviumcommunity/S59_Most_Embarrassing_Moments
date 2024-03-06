@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Loader from "./Loader";
+import LandingPage from "./LandingPage";
 
 export default function Moments({ load }) {
   const location = useLocation();
@@ -9,11 +10,12 @@ export default function Moments({ load }) {
   console.log(location, state);
 
   if (!state) {
-    return <h1>Location not fond !</h1>;
+    return <h1>Location not found !</h1>;
   }
 
   return (
     <>
+      <LandingPage />
       {load ? <Loader /> : null}
       <div className="moment-box">
         <h2>Location: {state}</h2>

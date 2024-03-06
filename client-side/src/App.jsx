@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import LandingPage from "./components/LandingPage";
 import "./App.css";
+import "./components/blog/Blog.css"
 import { Route, Routes } from "react-router-dom";
 import Moments from "./components/Moments";
 import Home from "./components/Home";
 import Loader from "./components/Loader";
 import NavBar from "./components/NavBar";
+import Blog from "./components/blog/Blog"
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -26,10 +28,11 @@ export default function App() {
     <>
       {load ? <Loader /> : null}
       <NavBar/>
-      <LandingPage />
+      {/* <LandingPage /> */}
       <Routes>
         <Route path="/" element={<Home data={data} />} />
         <Route path="/moments" element={<Moments load={load}/>} />
+        <Route path="/blog" element={<Blog/>} />
       </Routes>
     </>
   );

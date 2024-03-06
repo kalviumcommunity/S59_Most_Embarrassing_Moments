@@ -1,18 +1,21 @@
 import React from "react";
-import user from "../assets/user.png";
+import { Link } from "react-router-dom";
+import "../App.css";
 
 function NavBar() {
   return (
     <>
       <nav>
-        <div id="home">Home</div>
+        <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
+          <div id="home">Home</div>
+        </Link>
         <div id="search">
           <span>Search for more products here</span>
           <input type="text" />
         </div>
-        <div id="login">
-          <img src={user} alt="" />
-        </div>
+        <Link to={"/blog"} style={{ textDecoration: "none", color: "white" }}>
+          <div id="login">Story Stash</div>
+        </Link>
       </nav>
     </>
   );
