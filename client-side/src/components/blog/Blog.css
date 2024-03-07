@@ -113,7 +113,12 @@
 }
 
 .post {
-    margin: 10vh;
+    margin: 5vh;
+    border: 1px solid black;
+    padding: 4vh;
+    border-radius: 1vh;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.39);
+    border: none;
 }
 
 .post h3 {
@@ -137,5 +142,27 @@
 #parent-stories span img {
     height: 7vh;
     margin: 0vh 2vh 0vh 0vh;
+}
 
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons div {
+    margin: 3vh 1vh 0vh 1vh;
+    padding: 0.5vh;
+    border-radius: 0.5vh;
+    border: none;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.39);
+}
+
+.buttons div:hover {
+    cursor: pointer;
+    transform: rotate(10deg);
+}
+
+.buttons div img {
+    height: 10vh;
+    width: 10vh;
 }

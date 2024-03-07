@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import blog1 from "../../assets/blog1.jpg";
 import blog2 from "../../assets/blog2.jpg";
 import BlogStories from "./BlogStories";
+import { ToastContainer, toast } from "react-toastify";
+import "../../../node_modules/react-toastify/dist/ReactToastify.css";
 
 function Blog() {
   const [name, setName] = useState("");
@@ -10,7 +12,6 @@ function Blog() {
   const [data, setData] = useState([]);
 
   const handleSubmit = () => {
-    console.log("Loading......");
     if (name && title && story) {
       const list = {
         name: name,
@@ -26,13 +27,16 @@ function Blog() {
       })
         .then((res) => res.json())
         .then((res) => {
-          console.log("Done");
           console.log(res);
           setData([...data, res]);
+          toast.success("Your post is now live !");
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+          toast.error("There was an error while posting");
+        });
     } else {
-      alert("Please fill in all fields before submitting.");
+      toast.error("Please fill in all fields !");
     }
   };
 
@@ -84,6 +88,7 @@ function Blog() {
         </button>
       </section>
       <BlogStories data={data} setData={setData} />
+      <ToastContainer />
     </>
   );
 }
