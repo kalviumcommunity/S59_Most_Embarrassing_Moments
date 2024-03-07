@@ -8,12 +8,9 @@ const cors = require('cors')
 
 app.use(cors())
 app.use(express.json())
-app.use('/moments', routes)
-app.use('/blog', blog_route)
 
-app.get('/ping', (req, res) => {
-  res.send(`<h1>Let's recall some embarrassing moments !</h1>`)
-})
+app.use('/blog', blog_route)
+app.use('/moments', routes)
 
 app.get('/', (req, res) => {
   const status = mongoose.connection.readyState == 1 ? 'Connected 😎😎' : 'Disconnected 😓😓'
