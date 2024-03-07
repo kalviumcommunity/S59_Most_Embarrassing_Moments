@@ -32,7 +32,8 @@ router.post('/', async (req, res) => {
         res.status(201).json(savePost)
     }
     catch (error) {
-        res.send({error:"An error has been caught - post"})
+        console.log(error.message)
+        res.send(error.message)
     }
 })
 
