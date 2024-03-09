@@ -6,10 +6,14 @@ import { ToastContainer, toast } from "react-toastify";
 import "../../../node_modules/react-toastify/dist/ReactToastify.css";
 
 function Blog() {
-  const [name, setName] = useState("");
-  const [title, setTitle] = useState("");
-  const [story, setStory] = useState("");
-  const [data, setData] = useState([]);
+  var [name, setName] = useState("");
+  var [title, setTitle] = useState("");
+  var [story, setStory] = useState("");
+  var [data, setData] = useState([]);
+
+  const [sendName, setSendName] = useState("");
+  const [sendTitle, setSendTitle] = useState("");
+  const [sendStory, setSendStory] = useState("");
 
   const handleSubmit = () => {
     if (name && title && story) {
@@ -30,6 +34,12 @@ function Blog() {
           console.log(res);
           setData([...data, res]);
           toast.success("Your post is now live !");
+          setSendName(name);
+          setSendTitle(title);
+          setSendStory(story);
+          setName("");
+          setTitle("");
+          setStory("");
         })
         .catch((err) => {
           console.log(err);
@@ -55,7 +65,7 @@ function Blog() {
         </div>
       </section>
 
-      <section className="create-box">
+      <section className="create-box" id="scroll-top">
         <h2>Add your own story</h2>
         <h4>Let people know your name (You could put anonymous too !)</h4>
         <input
@@ -64,6 +74,7 @@ function Blog() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
+          className="to-empty"
         />
         <h4>Give a title to your embarrassing story</h4>
         <input
@@ -72,22 +83,29 @@ function Blog() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
+          className="to-empty"
         />
         <h4>Write down your story</h4>
         <textarea
           placeholder="Tell us your story"
-          cols="40"
-          rows="15"
           value={story}
           onChange={(e) => setStory(e.target.value)}
           required
+          className="to-empty"
         ></textarea>
         <h5>time to add your post to our blog !</h5>
         <button type="submit" onClick={handleSubmit}>
           Add post
         </button>
       </section>
-      <BlogStories data={data} setData={setData} />
+      <BlogStories
+        data={data}
+        setData={setData}
+        name={sendName}
+        title={sendTitle}
+        story={sendStory}
+      />
+      {/* {console.log(send_name)} */}
       <ToastContainer />
     </>
   );

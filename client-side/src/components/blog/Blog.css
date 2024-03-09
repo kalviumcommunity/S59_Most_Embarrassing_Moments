@@ -78,6 +78,8 @@
     border: none;
     border-radius: 1vh;
     box-shadow: 1px 1px 5px rgb(147, 62, 2);
+    height: 30vh;
+    width: 60vh;
 }
 
 .create-box h5 {
@@ -165,4 +167,73 @@
 .buttons div img {
     height: 10vh;
     width: 10vh;
+}
+
+.parent-confirm, #parent-update {
+    position: fixed;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;   
+    background-color: rgba(0, 0, 0, 0.496);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.confirm {
+    position: fixed;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.488);
+    padding: 2vh;
+    color: white;
+    text-shadow: 1px 1px 10px black;
+}
+
+.confirm p {
+    font-family: 'Dosis';
+    font-size: 4vh;
+    margin: 2vh 3vh 4vh 6vh;
+}
+
+.confirm button, #update button {
+    margin: 4vh;
+    padding: 1vh 3vh 1vh 3vh;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 1vh;
+    box-shadow: 1px 1px 6px rgb(238, 130, 130);
+}
+
+.confirm button:hover,#update button:hover {
+    box-shadow: 0px 0px 10px red;
+    transform: scale(1.03);
+}
+
+#update {
+    font-family: 'Dosis';
+    color: white;
+    text-shadow: 1px 1px 5px black;
+    background-color: rgba(0, 0, 0, 0.488);
+    padding: 5vh;
+    border-radius: 3vh;
+}
+
+#update h3 {
+    margin: 3vh 0vh 1vh 0vh;
+}
+
+#update input {
+    height: 2vh;
+    width: 30vw;
+    text-align: center;
+    padding: 1vh;
+}
+
+#update textarea {
+    height: 10vh;
+    width: 40vw;
+    padding: 1vh;
 }
