@@ -13,6 +13,7 @@ export default function BlogStories({ data, setData, name, title, story }) {
   const [update, setUpdate] = useState(false);
   const [updatePost, setUpdatePost] = useState(null);
 
+  // http://localhost:3000/
   useEffect(() => {
     fetch("https://s59-most-embarrassing-moments-2.onrender.com/blog")
       .then((res) => res.json())

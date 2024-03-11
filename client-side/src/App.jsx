@@ -13,6 +13,7 @@ export default function App() {
   const [data, setData] = useState([]);
   const [load, setLoad] = useState(true);
 
+  // http://localhost:3000/
   useEffect(() => {
     fetch("https://s59-most-embarrassing-moments-2.onrender.com/moments")
       .then((res) => res.json())
