@@ -5,6 +5,8 @@ const Post = require('../schemas/blog-schema.js')
 
 connectToDataBase()
 
+const postSchema = require('../schemas/joi-schema.js')
+
 router.get('/', async (req, res) => {
     try {
         const blog = await Post.find()
@@ -27,6 +29,10 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
+        const {error} = postSchema.validate(req.body)
+        if (error) {
+            res.json({error: "Please return proper data"})
+        }
         const post = new Post(req.body)
         const savePost = await post.save()
         res.status(201).json(savePost)
@@ -39,6 +45,10 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
     try {
+        const {error} = postSchema.validate(req.body)
+        if (error) {
+            res.json({error: "Please return proper data"})
+        }
         const blog = await Post.findByIdAndUpdate(req.params.id, req.body, { new: true })
         if (!blog) {
             return res.status(400).send("No result found")
