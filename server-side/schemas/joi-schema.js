@@ -1,9 +1,9 @@
 const Joi = require('joi')
 
 const schema = Joi.object({
-    name: Joi.string(),
-    title: Joi.string().min(3).max(50),
-    body: Joi.string()
+    name: Joi.string().required(),
+    title: Joi.string().min(3).max(50).required(),
+    body: Joi.string().required()
 })
 
 module.exports = {
