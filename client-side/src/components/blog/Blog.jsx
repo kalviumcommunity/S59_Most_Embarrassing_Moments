@@ -20,7 +20,7 @@ function Blog() {
       };
       // http://localhost:3000/blog
       // https://s59-most-embarrassing-moments-2.onrender.com/blog
-      fetch("http://localhost:3000/blog", {
+      fetch("https://s59-most-embarrassing-moments-2.onrender.com/blog", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
