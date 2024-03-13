@@ -11,10 +11,6 @@ function Blog() {
   var [story, setStory] = useState("");
   var [data, setData] = useState([]);
 
-  const [sendName, setSendName] = useState("");
-  const [sendTitle, setSendTitle] = useState("");
-  const [sendStory, setSendStory] = useState("");
-
   const handleSubmit = () => {
     if (name && title && story) {
       const list = {
@@ -22,7 +18,9 @@ function Blog() {
         title: title,
         body: story,
       };
-      fetch("https://s59-most-embarrassing-moments-2.onrender.com/blog", {
+      // http://localhost:3000/blog
+      // https://s59-most-embarrassing-moments-2.onrender.com/blog
+      fetch("http://localhost:3000/blog", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -31,12 +29,9 @@ function Blog() {
       })
         .then((res) => res.json())
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           setData([...data, res]);
           toast.success("Your post is now live !");
-          setSendName(name);
-          setSendTitle(title);
-          setSendStory(story);
           setName("");
           setTitle("");
           setStory("");
@@ -98,13 +93,7 @@ function Blog() {
           Add post
         </button>
       </section>
-      <BlogStories
-        data={data}
-        setData={setData}
-        name={sendName}
-        title={sendTitle}
-        story={sendStory}
-      />
+      <BlogStories data={data} setData={setData} />
       {/* {console.log(send_name)} */}
       <ToastContainer />
     </>
