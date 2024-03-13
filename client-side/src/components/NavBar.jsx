@@ -9,10 +9,9 @@ function NavBar() {
         <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
           <div id="home">Home</div>
         </Link>
-        <div id="search">
-          <span>Search for more products here</span>
-          <input type="text" />
-        </div>
+        <Link to={"/user/login"} style={{ textDecoration: "none", color: "white" }}>
+          <div id="search">Click to Join the Family</div>
+        </Link>
         <Link to={"/blog"} style={{ textDecoration: "none", color: "white" }}>
           <div id="login">Story Stash</div>
         </Link>

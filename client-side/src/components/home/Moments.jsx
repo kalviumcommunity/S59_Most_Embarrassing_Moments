@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import Loader from "./Loader";
+import Loader from "../Loader";
 import LandingPage from "./LandingPage";
 
 export default function Moments({ load }) {

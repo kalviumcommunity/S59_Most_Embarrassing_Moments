@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+.login-parent {
+    background-image: url("../../assets/login.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3vh;
+    margin: 10vh;
+    color: white;
+    /* height: 99vh; */
+    box-shadow: 9px 9px 15px rgba(0, 0, 0, 0.659);
+}
+
+.login-parent h2 {
+    font-size: 11vh;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 0.1vh;
+    font-weight: 300;
+    -webkit-text-fill-color: #95afde10;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: white;
+    text-shadow: 2px 2px 45px rgba(255, 255, 255, 0.086);
+}
+
+.login {
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5vh 10vh 5vh 10vh;
+    margin: 5vh;
+    box-shadow: 0px 0px 5px white;
+}
+
+.login input {
+    margin: 2vh;
+    height: 4vh;
+    width: 20vw;
+    text-align: center;
+}
+
+.login h4 {
+    font-size: 4vh;
+    font-family: "Rajdhani";
+}
+
+.login h3 {
+    font-size: 2.5vh;
+    font-family: monospace;
+    font-weight: 100;
+    margin: 1vh;
+    background-color: rgba(123, 123, 123, 0.529);
+    padding: 1vh;
+    border-radius: 1vh;
+}
+
+.link-route {
+    font-family: monospace;
+    margin: 1vh;
+    padding: 1vh;
+    border-radius: 1vh;
+}
+
+.link-route:hover {
+    transition-duration: 0.5s;
+    box-shadow: 1px 1px 20px rgba(255, 255, 255, 0.482);
+}
+
+.login button, .logout button {
+    padding: 1vh;
+    margin: 3vh 1vh 0vh 1vh;
+    border-radius: 1vh;
+    border: none;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.41);
+}
+
+.login button:hover, .logout button:hover {
+    cursor: pointer;
+    transition-duration: 0.7s;
+    background-color: black;
+    color: white;
+}
+
+.login button:not(:hover), .logout button:not(:hover) {
+    transition-duration: 0.7s;
+}
+
+.logout h1 {
+    font-family: "Anton";
+}
+
+.logout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
