@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Cover from "../assets/cover.jpg";
+import Cover from "../../assets/cover.jpg";
 
 export default function LandingPage() {
 

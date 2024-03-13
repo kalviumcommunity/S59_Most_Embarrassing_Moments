@@ -3,7 +3,7 @@ const router = express.Router()
 const { connectToDataBase } = require('../db.js')
 const Post = require('../schemas/blog-schema.js')
 
-connectToDataBase()
+// connectToDataBase()
 
 const postSchema = require('../schemas/joi-schema.js')
 

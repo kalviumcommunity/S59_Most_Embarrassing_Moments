@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import LandingPage from "./components/LandingPage";
 import "./App.css";
 import "./components/blog/Blog.css";
 import { Route, Routes } from "react-router-dom";
-import Moments from "./components/Moments";
-import Home from "./components/Home";
+import Moments from "./components/home/Moments";
+import Home from "./components/home/Home";
 import Loader from "./components/Loader";
 import NavBar from "./components/NavBar";
 import Blog from "./components/blog/Blog";
+import Login from "./components/user/Login";
+import Signup from "./components/user/Signup";
+import Logout from "./components/user/Logout";
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -34,6 +36,9 @@ export default function App() {
         <Route path="/" element={<Home data={data} />} />
         <Route path="/moments" element={<Moments load={load} />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/user/login" element={<Login />} />
+        <Route path="/user/signup" element={<Signup />} />
+        <Route path="/user/logout" element={<Logout />} />
       </Routes>
     </>
   );
