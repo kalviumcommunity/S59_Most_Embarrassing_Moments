@@ -22,7 +22,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/user/login", {
+      const response = await fetch("https://s59-most-embarrassing-moments-2.onrender.com/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,11 +31,14 @@ function Login() {
       });
 
       if (response.ok) {
-        const res = await response.json();
-        console.log("Login successful");
+        const { token } = await response.json();
+        console.log("Login successful", token);
         setIsLoggedIn(true);
-        setUsername(username)
-        document.cookie = `username=${username}; expires=Thu, 01 Jan 9999 00:00:00 UTC`;
+        setUsername(username);
+        if (token) {
+          document.cookie = `username=${username}; expires=Thu, 01 Jan 9999 00:00:00 UTC`;
+          document.cookie = `token=${token}; expires=Thu, 01 Jan 9999 00:00:00 UTC`;
+        }
         console.log(username, "login");
         toast.success("You have successfully logged in !");
       } else {
@@ -50,18 +53,22 @@ function Login() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("https://s59-most-embarrassing-moments-2.onrender.com/user/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      });
+      const response = await fetch(
+        "https://s59-most-embarrassing-moments-2.onrender.com/user/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        }
+      );
       if (response.ok) {
         console.log("Logout successful");
         console.log(username, "logout");
         // document.cookie = "username=";
         document.cookie = "username=; expires=Thu, 01 Jan 1000 00:00:00 UTC";
+        document.cookie = "token=; expires=Thu, 01 Jan 1000 00:00:00 UTC";
         setIsLoggedIn(false);
         toast.success("You have successfully logged out !");
       } else {
