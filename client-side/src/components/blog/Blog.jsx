@@ -11,6 +11,8 @@ function Blog() {
   var [story, setStory] = useState("");
   var [data, setData] = useState([]);
 
+  const [select, setSelect] = useState("All");
+
   const handleSubmit = () => {
     if (name && title && story) {
       const list = {
@@ -93,7 +95,20 @@ function Blog() {
           Add post
         </button>
       </section>
-      <BlogStories data={data} setData={setData} />
+
+      <h4 id="choose">Choose a name to filter data !</h4>
+      <div id="select">
+        <select name="" id="" onChange={(e) => setSelect(e.target.value)}>
+          <option value="All">All</option>
+          {[...new Set(data.map((e) => e.name))].map((name) => (
+            <option value={name} key={name}>
+              {name}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <BlogStories data={data} setData={setData} select={select} />
       {/* {console.log(send_name)} */}
       <ToastContainer />
     </>

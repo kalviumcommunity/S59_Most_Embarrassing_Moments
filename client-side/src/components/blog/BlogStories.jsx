@@ -7,7 +7,14 @@ import "../../../node_modules/react-toastify/dist/ReactToastify.css";
 import Confirm from "./Confirm";
 import Update from "./Update";
 
-export default function BlogStories({ data, setData, name, title, story }) {
+export default function BlogStories({
+  data,
+  setData,
+  name,
+  title,
+  story,
+  select,
+}) {
   const [confirm, setConfirm] = useState(false);
   const [deletePost, setDeletePost] = useState(null);
   const [update, setUpdate] = useState(false);
@@ -60,6 +67,14 @@ export default function BlogStories({ data, setData, name, title, story }) {
       });
   };
 
+  let filteredlist = data.filter((e) => {
+    if (select == "All") {
+      return true;
+    } else {
+      return e.name == select;
+    }
+  });
+
   return (
     <>
       {update && (
@@ -73,7 +88,7 @@ export default function BlogStories({ data, setData, name, title, story }) {
         />
       )}
       <div id="parent-stories">
-        {data
+        {filteredlist
           .slice()
           .reverse()
           .map((e) => (

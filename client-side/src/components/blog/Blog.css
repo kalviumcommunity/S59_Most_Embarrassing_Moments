@@ -70,14 +70,14 @@
     padding: 1vh;
     border-radius: 1vh;
     border: none;
-    box-shadow: 1px 1px 5px rgb(147, 62, 2);
+    box-shadow: 1px 1px 5px #933e02;
 }
 
 .create-box textarea {
     padding: 1vh;
     border: none;
     border-radius: 1vh;
-    box-shadow: 1px 1px 5px rgb(147, 62, 2);
+    box-shadow: 1px 1px 5px #933e02;
     height: 30vh;
     width: 60vh;
 }
@@ -93,8 +93,8 @@
     padding: 1vh 4vh 1vh 4vh;
     font-size: 2vh;
     border-radius: 0.6vh;
-    border: 1px solid rgb(147, 62, 2);
-    background-color: rgb(199, 107, 42);
+    border: 1px solid #933e02;
+    background-color: #c76b2a;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.46);
 }
 
@@ -102,7 +102,7 @@
     cursor: pointer;
     transform: scale(1.06);
     transition-duration: 0.5s;
-    box-shadow: 0px 0px 15px rgba(249, 112, 33, 0.926);
+    box-shadow: 0px 0px 15px #f97021ec;
 }
 
 .create-box button:not(:hover) {
@@ -121,7 +121,7 @@
     border-radius: 1vh;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.39);
     border: none;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
 }
 
 .post h3 {
@@ -205,7 +205,7 @@
     background-color: rgb(255, 255, 255);
     border: none;
     border-radius: 1vh;
-    box-shadow: 1px 1px 6px rgb(238, 130, 130);
+    box-shadow: 1px 1px 6px #ee8282;
 }
 
 .confirm button:hover,#update button:hover {
@@ -237,4 +237,35 @@
     height: 10vh;
     width: 40vw;
     padding: 1vh;
+}
+
+h4#choose {
+    font-family: "Dosis";
+    font-size: 4vh;
+    text-align: center;
+}
+
+div#select {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 4vh;
+}
+
+div#select select {
+    padding: 10px;
+    border: 1px solid #b06126;
+    border-radius: 5px;
+    /* border: none; */
+    background-color: #ffc8ad;
+    cursor: pointer;
+    box-shadow: 0px 0px 30px rgba(255, 148, 60, 0.703);
+}
+
+div#select select option {
+    background-color: #fba364;
+}
+
+div#select select option:hover {
+    background-color: #fe8630;
 }
