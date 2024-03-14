@@ -87,6 +87,7 @@ export default function BlogStories({
           setUpdatePost={setUpdatePost}
         />
       )}
+
       <div id="parent-stories">
         {filteredlist
           .slice()
@@ -110,6 +111,7 @@ export default function BlogStories({
             </div>
           ))}
       </div>
+      
       {confirm && (
         <Confirm
           message="Are you sure you want to delete this post?"
