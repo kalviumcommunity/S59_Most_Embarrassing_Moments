@@ -9,7 +9,7 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  // console.log(import.meta.env.VITE_URI);
   var cookies = document.cookie;
   useEffect(() => {
     // console.log(cookies);
