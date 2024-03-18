@@ -7,7 +7,7 @@ export default function Moments({ load }) {
   const location = useLocation();
   const state = location.state.location;
   const data = location.state.data;
-  console.log(location, state);
+  // console.log(location, state);
 
   if (!state) {
     return <h1>Location not found !</h1>;

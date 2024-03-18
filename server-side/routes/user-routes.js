@@ -4,7 +4,7 @@ const { connectToDataBase } = require('../db.js');
 const User = require('../schemas/user-schema.js');
 const jwt = require('jsonwebtoken')
 
-// connectToDataBase();
+connectToDataBase();
 
 router.get('/', async (req, res) => {
   try {

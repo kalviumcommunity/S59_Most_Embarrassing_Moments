@@ -22,24 +22,28 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://s59-most-embarrassing-moments-2.onrender.com/user/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      });
+      const response = await fetch(
+        // `${import.meta.env.VITE_URI}/user/login`,
+        `http://localhost:3000/user/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        }
+      );
 
       if (response.ok) {
         const { token } = await response.json();
-        console.log("Login successful", token);
+        // console.log("Login successful", token);
         setIsLoggedIn(true);
         setUsername(username);
         if (token) {
           document.cookie = `username=${username}; expires=Thu, 01 Jan 9999 00:00:00 UTC`;
           document.cookie = `token=${token}; expires=Thu, 01 Jan 9999 00:00:00 UTC`;
         }
-        console.log(username, "login");
+        // console.log(username, "login");
         toast.success("You have successfully logged in !");
       } else {
         console.error("Login failed");
@@ -53,19 +57,16 @@ function Login() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch(
-        "https://s59-most-embarrassing-moments-2.onrender.com/user/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ username, password }),
-        }
-      );
+      const response = await fetch(`${import.meta.env.VITE_URI}/user/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
       if (response.ok) {
-        console.log("Logout successful");
-        console.log(username, "logout");
+        // console.log("Logout successful");
+        // console.log(username, "logout");
         // document.cookie = "username=";
         document.cookie = "username=; expires=Thu, 01 Jan 1000 00:00:00 UTC";
         document.cookie = "token=; expires=Thu, 01 Jan 1000 00:00:00 UTC";
@@ -109,7 +110,7 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button onClick={handleLogin}>Login</button>
+            <button onClick={(e) => handleLogin(e)}>Login</button>
           </section>
         </section>
       ) : (

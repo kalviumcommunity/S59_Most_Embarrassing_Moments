@@ -14,21 +14,24 @@ function Signup() {
     e.preventDefault();
     if (name && username && email && password) {
       try {
-        const response = await fetch("http://localhost:3000/user/signup", {
-          method: "post",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ name, username, email, password }),
-        });
+        const response = await fetch(
+          `${import.meta.env.VITE_URI}/user/signup`,
+          {
+            method: "post",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, username, email, password }),
+          }
+        );
 
         if (response.ok) {
-          console.log("Registration successful for", response);
+          // console.log("Registration successful for", response);
           toast.success("Congratulations for registering with us !");
           // document.cookie = `username=${username}; expires=Thu, 01 Jan 9999 00:00:00 UTC`;
           setPassword("");
-          setEmail('')
-          setName("")
+          setEmail("");
+          setName("");
           setUsername("");
         } else {
           toast.error("Already have an account with the entered credential(s)");

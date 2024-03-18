@@ -10,7 +10,7 @@ function Blog() {
   var [title, setTitle] = useState("");
   var [story, setStory] = useState("");
   var [data, setData] = useState([]);
-
+  // console.log(import.meta.env.VITE_REACT);
   const [select, setSelect] = useState("All");
 
   const handleSubmit = () => {
@@ -20,9 +20,7 @@ function Blog() {
         title: title,
         body: story,
       };
-      // http://localhost:3000/blog
-      // https://s59-most-embarrassing-moments-2.onrender.com/blog
-      fetch("https://s59-most-embarrassing-moments-2.onrender.com/blog", {
+      fetch(`${import.meta.env.VITE_URI}/blog`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",

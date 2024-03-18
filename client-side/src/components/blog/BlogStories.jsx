@@ -20,9 +20,8 @@ export default function BlogStories({
   const [update, setUpdate] = useState(false);
   const [updatePost, setUpdatePost] = useState(null);
 
-  // http://localhost:3000/
   useEffect(() => {
-    fetch("https://s59-most-embarrassing-moments-2.onrender.com/blog")
+    fetch(`${import.meta.env.VITE_URI}/blog`)
       .then((res) => res.json())
       .then((res) => setData(res))
       .catch(() => toast.error("Could not get the data !"));
@@ -48,7 +47,7 @@ export default function BlogStories({
 
   const confirmdeletePost = () => {
     fetch(
-      `https://s59-most-embarrassing-moments-2.onrender.com/blog/${deletePost}`,
+      `${import.meta.env.VITE_URI}/blog/${deletePost}`,
       {
         method: "DELETE",
       }

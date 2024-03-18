@@ -25,7 +25,7 @@ export default function Update({
 
     if (name && title && story) {
       fetch(
-        `https://s59-most-embarrassing-moments-2.onrender.com/blog/${updatePost}`,
+        `${import.meta.env.VITE_URI}/blog/${updatePost}`,
         {
           method: "PATCH",
           headers: {

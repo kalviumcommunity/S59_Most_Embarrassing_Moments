@@ -12,7 +12,7 @@ function Logout({ handleLogout }) {
       .find((cookie) => cookie.trim().startsWith("username="));
     if (usernameCookie) {
       const username = usernameCookie.split("=")[1].trim();
-      console.log(username);
+      // console.log(username);
       setUsername(username);
     }
   }, [cookies]);
