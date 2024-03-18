@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./User.css";
 import { ToastContainer, toast } from "react-toastify";
-import "../../../node_modules/react-toastify/dist/reactToastify.css";
+//import "../../../node_modules/react-toastify/dist/reactToastify.css";
+import "react-toastify/dist/ReactToastify.minimal.css";
 import Logout from "./Logout";
 
 function Login() {
@@ -22,16 +23,13 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_URI}/user/login`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ username, password }),
-        }
-      );
+      const response = await fetch(`${import.meta.env.VITE_URI}/user/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
 
       if (response.ok) {
         const { token } = await response.json();

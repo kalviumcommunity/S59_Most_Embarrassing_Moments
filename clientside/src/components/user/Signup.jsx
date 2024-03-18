@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./User.css";
 import { ToastContainer, toast } from "react-toastify";
-import "../../../node_modules/react-toastify/dist/reactToastify.css";
+import "react-toastify/dist/ReactToastify.minimal.css";
 
 function Signup() {
   const [name, setName] = useState("");
