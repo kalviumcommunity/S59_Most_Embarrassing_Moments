@@ -57,7 +57,8 @@ function Login() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_URI}/user/login`, {
+      // const response = await fetch(`${import.meta.env.VITE_URI}/user/login`, {
+      const response = await fetch(`http://localhost:3000/user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
