@@ -12,6 +12,8 @@ router.get('/', async (req, res) => {
     }
     catch (error) {
         res.json({error: 'An error has been caught - get'})
+<<<<<<< HEAD:routes.js
+=======
     }
 })
 
@@ -27,6 +29,7 @@ router.get('/:location', async (req, res) => {
     } 
     catch (error) {
         res.status(500).json({ error: 'An error has been caught - getLocation' });
+>>>>>>> 81e189c8ed68b1d594075fd151bea12dddf782f0:serverside/routes/routes.js
     }
 })
 
@@ -73,7 +76,7 @@ router.patch('/:id', async (req, res) => {
         res.json(times)
     }
     catch (error) {
-        res.status(400).json({error: "An error has been caught"})
+        res.status(400).json({error: "An error has been caught - patch"})
     }
 })
 
@@ -91,4 +94,8 @@ router.delete('/:id', async (req, res) => {
     }
 })
 
+<<<<<<< HEAD:routes.js
 module.exports = router
+=======
+module.exports = router
+>>>>>>> 81e189c8ed68b1d594075fd151bea12dddf782f0:serverside/routes/routes.js
