@@ -1,0 +1,31 @@
+#loader {
+  width: 15vh;
+  height: 15vh;
+  border: 16px solid #ff5100;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: loading 1.6s ease infinite;
+  z-index: 2;
+}
+
+#blur {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  backdrop-filter: blur(9px);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
