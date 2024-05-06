@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+#blog-intro {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Rajdhani';
+    line-height: 9vh;
+    padding: 5vh;
+    text-align: center;
+    margin: 13vh 0vh 0vh 0vh;
+}
+
+#blog-intro h1 {
+    font-size: 7vh;
+    margin: 0vh 2h 2vh 2vh;
+}
+
+#blog-intro h3 {
+    font-size: 5vh;
+    font-variant: small-caps;
+    animation: spin 6s infinite ease;
+}
+
+#blog-intro img {
+    height: 40vh;
+    width: 40vh;
+    margin: 0vh 3vh 0vh 3vh;
+}
+
+@keyframes spin {
+    0%, 25% {
+        transform: rotateY(0deg);
+    }
+    80%, 90% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+.create-box {
+    background-color: rgb(253, 212, 168);
+    margin: 16vh 19vh 10vh 19vh;
+    padding: 4vh;
+    text-align: center;
+}
+
+.create-box h2 {
+    font-family: 'Rajdhani';
+    font-size: 7vh;
+    margin: 2vh;
+    text-shadow: 1px 1px 20px rgba(147, 62, 2, 0.74);
+}
+
+.create-box h4 {
+    font-size: 3vh;
+    font-family: "Dosis";
+    margin: 3vh;
+}
+
+.create-box input {
+    height: 3vh;
+    width: 20vw;
+    text-align: center;
+    padding: 1vh;
+    border-radius: 1vh;
+    border: none;
+    box-shadow: 1px 1px 5px #933e02;
+}
+
+.create-box textarea {
+    padding: 1vh;
+    border: none;
+    border-radius: 1vh;
+    box-shadow: 1px 1px 5px #933e02;
+    height: 30vh;
+    width: 60vh;
+}
+
+.create-box h5 {
+    font-size: 4vh;
+    font-variant: small-caps;
+    font-family: 'Dosis';
+    margin: 3vh;
+}
+
+.create-box button {
+    padding: 1vh 4vh 1vh 4vh;
+    font-size: 2vh;
+    border-radius: 0.6vh;
+    border: 1px solid #933e02;
+    background-color: #c76b2a;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.46);
+}
+
+.create-box button:hover {
+    cursor: pointer;
+    transform: scale(1.06);
+    transition-duration: 0.5s;
+    box-shadow: 0px 0px 15px #f97021ec;
+}
+
+.create-box button:not(:hover) {
+    transition-duration: 0.8s;
+}
+
+#parent-stories {
+    margin: 20vh;
+    font-family: 'Dosis';
+}
+
+.post {
+    margin: 5vh;
+    border: 1px solid black;
+    padding: 4vh;
+    border-radius: 1vh;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.39);
+    border: none;
+    /* overflow-x: scroll; */
+}
+
+.post h3 {
+    margin-bottom: 4vh;
+    font-size: 4vh;
+}
+
+.post h4 {
+    font-size: 2.5vh;
+    margin-bottom: 2vh;
+    font-family: 'Rajdhani';
+}
+
+#parent-stories span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: top;
+    margin-bottom: 2vh;
+}
+
+#parent-stories span img {
+    height: 7vh;
+    margin: 0vh 2vh 0vh 0vh;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons div {
+    margin: 3vh 1vh 0vh 1vh;
+    padding: 0.5vh;
+    border-radius: 0.5vh;
+    border: none;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.39);
+}
+
+.buttons div:hover {
+    cursor: pointer;
+    transform: rotate(10deg);
+}
+
+.buttons div img {
+    height: 10vh;
+    width: 10vh;
+}
+
+.parent-confirm, #parent-update {
+    position: fixed;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;   
+    background-color: rgba(0, 0, 0, 0.496);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.confirm {
+    position: fixed;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.488);
+    padding: 2vh;
+    color: white;
+    text-shadow: 1px 1px 10px black;
+}
+
+.confirm p {
+    font-family: 'Dosis';
+    font-size: 4vh;
+    margin: 2vh 3vh 4vh 6vh;
+}
+
+.confirm button, #update button {
+    margin: 4vh;
+    padding: 1vh 3vh 1vh 3vh;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 1vh;
+    box-shadow: 1px 1px 6px #ee8282;
+}
+
+.confirm button:hover,#update button:hover {
+    box-shadow: 0px 0px 10px red;
+    transform: scale(1.03);
+}
+
+#update {
+    font-family: 'Dosis';
+    color: white;
+    text-shadow: 1px 1px 5px black;
+    background-color: rgba(0, 0, 0, 0.488);
+    padding: 5vh;
+    border-radius: 3vh;
+}
+
+#update h3 {
+    margin: 3vh 0vh 1vh 0vh;
+}
+
+#update input {
+    height: 2vh;
+    width: 30vw;
+    text-align: center;
+    padding: 1vh;
+}
+
+#update textarea {
+    height: 10vh;
+    width: 40vw;
+    padding: 1vh;
+}
+
+h4#choose {
+    font-family: "Dosis";
+    font-size: 4vh;
+    text-align: center;
+}
+
+div#select {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 4vh;
+}
+
+div#select select {
+    padding: 10px;
+    border: 1px solid #b06126;
+    border-radius: 5px;
+    /* border: none; */
+    background-color: #ffc8ad;
+    cursor: pointer;
+    box-shadow: 0px 0px 30px rgba(255, 148, 60, 0.703);
+}
+
+div#select select option {
+    background-color: #fba364;
+}
+
+div#select select option:hover {
+    background-color: #fe8630;
+}

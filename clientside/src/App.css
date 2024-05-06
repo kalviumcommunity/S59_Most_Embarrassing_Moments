@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#header {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    align-items: center;
+    padding: 5vh 10vh 5vh 10vh;
+    margin: 12vh 4vh 5vh 4vh;
+    box-shadow: 1px 1px 25px #000000af;
+    border-radius: 1vh;
+    user-select: none;
+    /* height: 40vh; */
+}
+
+.heading-div img {
+    height: 46vh;
+}
+
+.heading-div h4 {
+    color: white;
+    font-family: monospace;
+    font-size: 3vh;
+    margin: 2vh;
+}
+
+#main-heading {
+    background: url("https://www.icegif.com/wp-content/uploads/2022/08/icegif-968.gif");
+    -webkit-text-fill-color: #95aede25;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: monospace;
+    text-align: left;
+    font-size: 10vh;
+    font-weight: 900;
+    background-position: 0;
+    animation: moving-bg 4.8s linear infinite;
+    -webkit-text-stroke-width: 1.08px;
+    -webkit-text-stroke-color: white;
+    padding: 2vh;
+}
+
+@keyframes moving-bg {
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: 100%;
+    }
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5vh 2vh 5vh 2vh;
+}
+
+.card {
+    /* background-color: black; */
+    /* color: white; */
+    background-size: cover;
+    margin: 8vh;
+    padding: 3vh;
+    height: 40vh;
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    /* background-color: white; */
+    color: black;
+    transition-duration: 0.3s;
+    box-shadow: 1px 1px 10px black;
+}
+
+.card:not(:hover) {
+    transition-duration: 0.6s;
+}
+
+.location {
+    background-color: white;
+    width: fit-content;
+    padding: 1vh;
+    border-radius: 1vh;
+    user-select: none;
+}
+
+.link {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.511);
+    padding: 1vh;
+    width: fit-content;
+    color: white;
+    border-radius: 2vh;
+}
+
+.link:hover {
+    transform: scale(1.03);
+    box-shadow: 1px 1px 10px white;
+    transition-duration: 0.5s;
+}
+
+.link:not(:hover) {
+    transition-duration: 0.2s;
+}
+
+.message {
+    margin: 15vh 0vh 15vh 0vh;
+    padding: 6vh;
+    text-align: center;
+}
+
+.message span:nth-of-type(1) {
+    animation: appear 7s infinite;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 4vh;
+    line-height: 8vh;
+}
+
+.message span:nth-of-type(2) {
+    animation: slide-in 7s infinite;
+    font-family: "Silkscreen";
+    font-size: 5vh;
+    text-shadow: 2px 2px rgb(255, 110, 110);
+
+}
+
+@keyframes appear {
+    0% {opacity:0%;}
+    25% {opacity:100%;}
+    90% {opacity: 100%;}
+    100% {opacity:0%;}
+}
+
+@keyframes slide-in {
+    0% { margin-left: -800px; }
+    50% { margin-left: 0px; }
+}
+
+.moment-box {
+    margin: 20vh;
+    text-align: center;
+}
+
+.moment-box img {
+    animation: show 6s 1 ease-in;
+
+}
+
+@keyframes show {
+    0% {
+        transform: scale(0.5);
+    }
+    10% {
+        transform: scale(1);
+    }
+
+}
+
+.moment-box h2 {
+    font-family: Georgia;
+    text-align: center;
+    margin: 5vh;
+    font-size: 5vh;
+    animation: appear 3s infinite ease-in;
+}
+
+.moment-box div {
+    margin: 5vh;
+}
+
+.moment-box h4 {
+    margin: 2vh;
+    font-family: monospace;
+    font-size: 2.2vh;
+}
+
+.one {
+    margin: 10vh;
+    padding: 4vh;
+    background-color: rgba(251, 202, 181, 0.288);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 2vh;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    font-size: 3vh;
+    margin-bottom: 5vh;
+    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.595);
+}
+
+nav img {
+    border: 1px solid white;
+    border-radius: 50%;
+    height: 4vh;
+    padding: 0.5vh;
+}
+
+nav div:hover {
+    user-select: none;
+    transition-duration: 0.5s;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+nav span {
+    margin: 3vh;
+}
