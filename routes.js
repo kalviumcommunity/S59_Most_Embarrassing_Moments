@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
         res.json(times)
     }
     catch (error) {
-        res.json({error: 'An error has been caught- get'})
+        res.json({error: 'An error has been caught - get'})
     }
 })
 
@@ -58,7 +58,7 @@ router.patch('/:id', async (req, res) => {
         res.json(times)
     }
     catch (error) {
-        res.status(400).json({error: "An error has been caught"})
+        res.status(400).json({error: "An error has been caught - patch"})
     }
 })
 
@@ -75,6 +75,5 @@ router.delete('/:id', async (req, res) => {
         res.status(400).json({error: "An error has been caught"})
     }
 })
-
 
 module.exports = router
